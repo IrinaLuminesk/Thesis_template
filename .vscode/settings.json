@@ -1,0 +1,95 @@
+{
+    "latex-workshop.latex.recipes": [
+        // {
+        //     "name": "pdflatex",
+        //     "tools": [
+        //         "pdflatex"
+        //     ]
+        // },
+        // {
+        //     "name": "xelatex",
+        //     "tools": [
+        //         "xelatex",
+        //         "biber",
+        //         "xelatex",
+        //         "xelatex"
+        //     ]
+        // }
+        {
+            "name": "lualatex",
+            "tools": [
+                "lualatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        // {
+        //     "name": "pdflatex",
+        //     "command": "pdflatex",
+        //     "args": [
+        //         "-synctex=1",
+        //         "-interaction=nonstopmode",
+        //         "%DOC%"
+        //     ]
+        // },
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "%DOC%"
+            ]
+        }
+        // {
+        //     "name": "xelatex",
+        //     "command": "xelatex",
+        //     "args": [
+        //         "-synctex=1",
+        //         "-interaction=nonstopmode",
+        //         "%DOC%"
+        //     ]
+        // },
+        // {
+        //     "name": "biber",
+        //     "command": "biber",
+        //     "args": [
+        //         "%DOCFILE%"
+        //     ]
+        // }
+    ],
+    "latex-workshop.latex.autoBuild.run": "onSave"
+}
+
+// {
+//     "latex-workshop.latex.recipes": [
+//         {
+//             "name": "lualatex ➞ biber ➞ lualatex ➞ lualatex",
+//             "tools": [
+//                 "lualatex",
+//                 "biber",
+//                 "lualatex",
+//                 "lualatex"
+//             ]
+//         }
+//     ],
+//     "latex-workshop.latex.tools": [
+//         {
+//             "name": "lualatex",
+//             "command": "lualatex",
+//             "args": [
+//                 "-synctex=1",
+//                 "-interaction=nonstopmode",
+//                 "%DOC%"
+//             ]
+//         },
+//         {
+//             "name": "biber",
+//             "command": "biber",
+//             "args": [
+//                 "%DOCFILE%"
+//             ]
+//         }
+//     ],
+//     "latex-workshop.latex.autoBuild.run": "onSave"
+// }
