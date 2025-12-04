@@ -4,9 +4,9 @@
 % Replace `english' with e.g. `spanish' to change the document language
 \usepackage[english]{babel}
 
-
+% Use to modify paper size and paper type 
 \usepackage[a4paper,top=3.5cm,bottom=3.0cm,left=3.5cm,right=2.0cm,marginparwidth=1.75cm]{geometry}
-\usepackage[utf8]{inputenc}
+% \usepackage[utf8]{inputenc}
 \usepackage{float}
 \usepackage{fontspec}
 \setmainfont{Times New Roman} 
@@ -16,13 +16,182 @@
 \usetikzlibrary{calc} 
 % \usepackage{showframe}
 
+% Use to edit toc
+\usepackage{tocloft}
+
+% Use to add temp paragraph
+\usepackage{lipsum}
+
+% Use to change font size
+\usepackage{anyfontsize}
+
+
+% Use to add math symbol
+\usepackage{amsmath}
+
+\usepackage{booktabs}
+
+\usepackage{tabularx}
+
+% Use to link ref
+\usepackage{hyperref} 
+\hypersetup{
+    colorlinks = true,
+    linkcolor = blue,
+    urlcolor  = blue,
+    citecolor = blue,
+}
+
+\usepackage{csquotes}
+
+\usepackage[backend=biber,style=ieee]{biblatex}
+\renewcommand{\bibfont}{\fontsize{15pt}{20pt}\selectfont}
+\addbibresource{bibliography.bib}
+
 \makeatletter
 
+
+% ============================================
+% TABLE OF CONTENTS (16pt entries)
+% ============================================
+
+% Chapter
+\renewcommand{\cftchapfont}{\fontsize{15pt}{20pt}\selectfont}
+\renewcommand{\cftchappagefont}{\fontsize{15pt}{20pt}\selectfont}
+
+% Section
+\renewcommand{\cftsecfont}{\fontsize{15pt}{20pt}\selectfont}
+\renewcommand{\cftsecpagefont}{\fontsize{15pt}{20pt}\selectfont}
+
+% Subsection
+\renewcommand{\cftsubsecfont}{\fontsize{15pt}{20pt}\selectfont}
+\renewcommand{\cftsubsecpagefont}{\fontsize{15pt}{20pt}\selectfont}
+
+% Subsubsection
+\renewcommand{\cftsubsubsecfont}{\fontsize{15pt}{20pt}\selectfont}
+\renewcommand{\cftsubsubsecpagefont}{\fontsize{15pt}{20pt}\selectfont}
+
+\setlength{\cftbeforechapskip}{16pt}
+\setlength{\cftbeforesecskip}{12pt}
+\setlength{\cftbeforesubsecskip}{10pt}
+\setlength{\cftbeforesubsubsecskip}{8pt}
+
+\setlength{\cftsubsubsecnumwidth}{8em}
+
+
+% ============================================
+% LIST OF FIGURES (16pt entries)
+% ============================================
+
+\renewcommand{\cftfigfont}{\fontsize{16pt}{20pt}\selectfont}
+\renewcommand{\cftfigpagefont}{\fontsize{16pt}{20pt}\selectfont}
+
+
+% ============================================
+% LIST OF TABLES (16pt entries)
+% ============================================
+
+\renewcommand{\cfttabfont}{\fontsize{16pt}{20pt}\selectfont}
+\renewcommand{\cfttabpagefont}{\fontsize{16pt}{20pt}\selectfont}
+
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
 \begin{document}
+
+% \setlength{\cftbeforechapskip}{0pt}  % Remove extra space before chapters in the TOC
+% \setlength{\cftsecindent}{0pt}       % Remove indentation for sections in the TOC
+% \setlength{\cftsubsecindent}{0pt}    % Remove indentation for subsections in the TOC
+% \setlength{\cftsubsubsecindent}{0pt} 
+
 
 % Add the page border here
 \include{Cover_Page}
 
 
+\addcontentsline{toc}{chapter}{LỜI CAM ĐOAN}
+\vspace*{0.5cm} % adjust as needed
+\begin{center}
+  {\Huge \bfseries LỜI CAM ĐOAN}
+\end{center}
+\input{Sections/Commitment.tex}
+\clearpage
+
+
+\addcontentsline{toc}{chapter}{LỜI CẢM ƠN}
+\vspace*{0.5cm} % adjust as needed
+\begin{center}
+  {\Huge \bfseries LỜI CẢM ƠN}
+\end{center}
+\input{Sections/Thanks.tex}
+\clearpage
+
+\addcontentsline{toc}{chapter}{TÓM TẮT}
+\vspace*{0.5cm} % adjust as needed
+\begin{center}
+  {\Huge \bfseries TÓM TẮT}
+\end{center}
+\input{Sections/Summary.tex}
+\clearpage
+
+\addcontentsline{toc}{chapter}{ABSTRACT}
+\vspace*{0.5cm} % adjust as needed
+\begin{center}
+  {\Huge \bfseries ABSTRACT}
+\end{center}
+\input{Sections/Abstract.tex}
+\clearpage
+
+
+\tableofcontents
+\clearpage
+
+\listoffigures
+\clearpage
+
+\listoftables
+\clearpage
+
+\addcontentsline{toc}{chapter}{DANH MỤC KÝ HIỆU}
+\vspace*{0.5cm} % adjust as needed
+\begin{center}
+  {\Huge \bfseries DANH MỤC KÝ HIỆU}
+\end{center}
+\input{Sections/Table_of_symbols.tex}
+\clearpage
+
+\addcontentsline{toc}{chapter}{DANH MỤC TỪ VIẾT TẮT}
+\vspace*{0.5cm} % adjust as needed
+\begin{center}
+  {\Huge \bfseries DANH MỤC TỪ VIẾT TẮT}
+\end{center}
+\input{Sections/Table_of_abbreviations.tex}
+\clearpage
+
+
+\chapter{THE WIND RISES, WE MUST TRY TO LIVE}
+\input{Chapter/Chapter1.tex}
+\clearpage
+
+\chapter{ABANDON ALL HOPE, YE WHO ENTER HERE}
+\input{Chapter/Chapter2.tex}
+\clearpage
+
+\chapter{VOX POPULI}
+\input{Chapter/Chapter3.tex}
+\clearpage
+
+\printbibliography[
+    heading=bibintoc,
+    title=TÀI LIỆU THAM KHẢO
+]
+\clearpage
+
+\addcontentsline{toc}{chapter}{APPENDIX}
+\vspace*{0.5cm} % adjust as needed
+\begin{center}
+  {\Huge \bfseries APPENDIX}
+\end{center}
+\input{Sections/Appendix.tex}
+\clearpage
 
 \end{document}

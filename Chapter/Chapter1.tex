@@ -1,0 +1,36 @@
+\vspace{1cm}
+{
+\fontsize{15pt}{20pt}\selectfont
+
+\section{Part 1}
+\lipsum[1-3]
+\section{Part 2}
+\subsection{Part 2.1}
+\lipsum[1]
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Images/Chapter1/Cat.jpg}
+	\caption{\centering Ảnh con mồn lèo}\label{fig:Cat}
+\end{figure}
+
+Bức ảnh của con mồn lèo \ref{fig:Cat}
+\subsection{Part 2.2}
+\lipsum[2]
+
+\begin{equation}
+\mathcal{L}_{\text{CIoU}} = 1 - \text{IoU} + \frac{\rho^2(\mathbf{b}, \mathbf{b}^{\ast})}{c^2} + \alpha v \label{eq:CIOU}
+\end{equation}
+Trong đó:
+\begin{itemize}
+    \item \text{IoU} là Intersection over Union giữa bounding box dự đoán và ground truth.
+    \item $\rho^2(\mathbf{b}, \mathbf{b}^{\ast}) = (x - x^{\ast})^2 + (y - y^{\ast})^2$ là khoảng cách giữa tâm của hai bounding box.
+    \item $c^2$là bình phương đường chéo của hình chữ nhật bao quanh cả hai bounding box.
+    \item $v = \frac{4}{\pi^2} \left( \arctan\left(\frac{w^{\ast}}{h^{\ast}}\right) - \arctan\left(\frac{w}{h}\right) \right)^2
+$ là thành phần đo sự khác biệt về tỷ lệ khung hình giữa bounding box dự đoán và ground truth.
+    \item $\alpha = \frac{v}{(1 - \text{IoU}) + v}$ là hệ số điều chỉnh.
+\end{itemize}
+
+Công thức \ref{eq:CIOU}
+
+\par
+}

@@ -6,21 +6,21 @@
         //         "pdflatex"
         //     ]
         // },
-        // {
-        //     "name": "xelatex",
-        //     "tools": [
-        //         "xelatex",
-        //         "biber",
-        //         "xelatex",
-        //         "xelatex"
-        //     ]
-        // }
         {
             "name": "lualatex",
             "tools": [
+                "lualatex",
+                "biber",
+                "lualatex",
                 "lualatex"
             ]
         }
+        // {
+        //     "name": "lualatex",
+        //     "tools": [
+        //         "lualatex"
+        //     ]
+        // }
     ],
     "latex-workshop.latex.tools": [
         // {
@@ -39,6 +39,13 @@
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "%DOC%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
             ]
         }
         // {
@@ -60,7 +67,6 @@
     ],
     "latex-workshop.latex.autoBuild.run": "onSave"
 }
-
 // {
 //     "latex-workshop.latex.recipes": [
 //         {
